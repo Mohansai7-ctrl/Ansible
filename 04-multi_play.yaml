@@ -14,7 +14,7 @@
   tasks:
   - name: Starting the mysqld service
     ansible.builtin.service:
-      name: mysqld
+      name: mysql
       state: started
       enabled: yes
   - name: Printing the starting status
