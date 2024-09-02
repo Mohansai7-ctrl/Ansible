@@ -1,0 +1,6 @@
+- name: Ping the server
+  hots: web #This inventory file group will tell the hosts of nodes ip to which ansible server need to connect
+  tasks: #It is the list of tasks/collections/modules
+  - name: Ping the server
+    ansible.builtin.ping
+  
