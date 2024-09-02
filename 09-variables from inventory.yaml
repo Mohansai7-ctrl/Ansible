@@ -3,4 +3,4 @@
   tasks:
   - name: info from inventory
     ansible.builtin.debug:  
-      msg: "Hi, this is{{STUDENT}} Learning the {{COURSE}}"
+      msg: "Hi, this is {{STUDENT}} Learning the {{COURSE}}"

@@ -1,0 +1,6 @@
+- name: variables from args
+  hosts: web
+  tasks:
+  - name: info from args at run time
+    ansible.builtin.debug:
+      msg: "Here we are checking the {{TYPE}} by providing {{WHAT}}"
