@@ -3,5 +3,6 @@
   tasks: #It is the list of tasks/collections/modules
   - name: Ping the server
     ansible.builtin.ping:
+      data: crash
 
   
