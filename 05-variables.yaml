@@ -1,6 +1,6 @@
 - name: Using variables
   hosts: web
-  vars:
+  vars: #Play level variable usage
     COURSE: "DEVOPS WITH AWS"
     STUDENT: "MOHANSAI"
     BATCH: "81S"

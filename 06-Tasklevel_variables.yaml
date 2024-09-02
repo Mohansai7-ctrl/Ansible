@@ -1,0 +1,21 @@
+- name: Using both play level and task level variables and their perference
+  hosts: web
+  vars: #Play level usage
+    COURSE: "DEVOPS WITH AWS"
+    STUDENT: "MOHANSAI"
+    BATCH: 81S
+  tasks:
+  - name: task-1:Using variables from play level
+    ansible.builtin.debug:
+      msg: "Hi I'm {{STUDENT}} Skilling up in course {{COURSE}} part of batch {{BATCH}}"
+  - name: task-2:Using variables from task level
+    vars:
+      COURSE: "CLOUD ENGINEER"
+      STUDENT: "SATYANADELLA"
+      BATCH: 80S
+    ansible.builtin.debug:
+      msg: "Hi I'm {{STUDENT}} Skilling up in course {{COURSE}} part of batch {{BATCH}}"
+  - name: task-3:Again using from Play level
+    ansible.builtin.debug
+      msg: "Hi I'm {{STUDENT}} Skilling up in course {{COURSE}} part of batch {{BATCH}}"
+    
