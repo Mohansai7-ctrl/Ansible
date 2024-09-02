@@ -11,5 +11,6 @@
   - name: Installing nginx
     yum:
       name:
-      - nginx
+      - nginx,
+        mysql
       state: installed
