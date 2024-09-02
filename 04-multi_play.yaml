@@ -1,22 +1,22 @@
 - name: Play1
   hosts: web
   tasks:
-  - name: Installing the mysql
+  - name: Installing the nginx
     ansible.builtin.package:
-      name: mysql
+      name: nginx
       state: present
   - name: Printing successful or not
     ansible.builtin.debug:
-      msg: "Installation of mysql is successful"
+      msg: "Installation of nginx is successful"
     
 - name: Play2
   hosts: web
   tasks:
-  - name: Starting the mysqld service
+  - name: Starting the nginx service
     ansible.builtin.service:
-      name: mysql
+      name: nginx
       state: started
       enabled: yes
   - name: Printing the starting status
     ansible.builtin.debug:
-      msg: "mysqld is started successfully"
+      msg: "nginx is started successfully"
