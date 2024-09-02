@@ -5,7 +5,7 @@
     ansible.builtin.ping:
   - name: Ping the server
     ansible.builtin.ping:
-      data: crash
+      data: pong
       
 
   
