@@ -1,0 +1,15 @@
+- name: checking usage of dnf and yum
+  hosts: web
+  tasks:
+  - name: Installing nodejs and httpd by dnf
+    dnf:
+      name: 
+      - nodejs
+        httpd
+      state: installed
+
+  - name: Installing nginx
+    yum:
+      name:
+      - nginx
+      state: installed
