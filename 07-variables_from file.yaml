@@ -1,0 +1,9 @@
+- name: Varables from files
+  hosts: web
+  vars_files:
+  - vars.yaml
+  tasks:
+  - name: Printing the info
+    ansible.builtin.debug:
+      msg: "Hi, I'm {{STUDENT}} Of Batch {{BATCH}} currently pursuing the course {{COURSE}}"
+    
