@@ -1,0 +1,10 @@
+#Preference of the usage of variables
+
+From args or command line arguments
+Task level
+variables from files
+variables from prompt
+Play level
+inventory
+
+if nothing provided, shows error
