@@ -1,0 +1,16 @@
+- name: usage of variables from prompting
+  hosts: web
+  vars_prompt:
+  - name: COURSE
+    prompt: Please enter the course name
+    private: false #By default means if you didnt specify the private then it shows as true meaning while promopting it doesnt show. But here we put false means it will show what we typed(prompted)
+  - name: NAME
+    prompt: Please enter your name
+    privacy: false
+  - name: BATCH
+    prompt: What is your batch number
+    privacy: true
+  tasks:
+  - name: Info from prompt
+    ansible.builtin.debug:
+      msg: "Hi, THIS IS {{NAME}}, got trained in course {{COURSE}} part of batch {{BATCH}}"

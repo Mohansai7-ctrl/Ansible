@@ -10,7 +10,7 @@
       msg: "Hi I'm {{STUDENT}} Skilling up in course {{COURSE}} part of batch {{BATCH}}"
   - name: task-2:Using variables from task level
     vars: #Here it takes preference with task level first, hence will take the values mentioned from task level
-      COURSE: "CLOUD ENGINEER"
+      COURSE: "CLOUD ENGINEER from task level"
       STUDENT: "SATYANADELLA"
       BATCH: "80S"
     ansible.builtin.debug:
