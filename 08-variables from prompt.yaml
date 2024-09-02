@@ -9,7 +9,7 @@
     private: false
   - name: BATCH
     prompt: What is your batch number
-    private: true #This wont show while prompting(typing)
+    #private: true #This wont show while prompting(typing)
   tasks:
   - name: Info from prompt
     ansible.builtin.debug:
