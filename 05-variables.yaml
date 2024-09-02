@@ -1,7 +1,7 @@
 - name: Using variables
   hosts: web
   vars: #Play level variable usage
-    COURSE: DEVOPS WITH AWS
+    COURSE: "DEVOPS WITH AWS" #Putting "" is optional
     STUDENT: "MOHANSAI"
     BATCH: "81S"
   tasks:
