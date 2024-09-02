@@ -11,6 +11,6 @@
   - name: Installing nginx
     yum:
       name:
-      - nginx,
+      - nginx, #To install multiple apps or packages we can use comma or -
         mysql
       state: installed
