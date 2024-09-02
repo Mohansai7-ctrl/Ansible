@@ -3,9 +3,11 @@
   tasks: #It is the list of tasks/collections/modules
   - name: Ping the server
     ansible.builtin.ping:
-  - name: Ping the server
-    ansible.builtin.ping:
-      data: pong
+  - name: Ping the window targets
+    ansible.windows.win_ping:
+  - name: Ping the Network targets
+    ansible.netcommon.net_ping:
+
       
 
   
