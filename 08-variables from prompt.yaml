@@ -6,10 +6,10 @@
     private: false #By default means if you didnt specify the private then it shows as true meaning while promopting it doesnt show. But here we put false means it will show what we typed(prompted)
   - name: NAME
     prompt: Please enter your name
-    privacy: false
+    private: false
   - name: BATCH
     prompt: What is your batch number
-    privacy: false
+    private: true #This wont show while prompting(typing)
   tasks:
   - name: Info from prompt
     ansible.builtin.debug:
