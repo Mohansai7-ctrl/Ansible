@@ -9,7 +9,7 @@
     privacy: false
   - name: BATCH
     prompt: What is your batch number
-    privacy: true
+    privacy: false
   tasks:
   - name: Info from prompt
     ansible.builtin.debug:
