@@ -5,12 +5,14 @@
     ansible.builtin.package:
       name: nginx
       state: present #or installed
+      - name: Printing it
         ansible.builtin.debug:
-        msg: "Nginx is installed successfully"
+          msg: "Nginx is installed successfully"
   - name: Starting the nginx
     ansible.builtin.service:
       name: nginx
       state: started
       enabled: yes
+      - name: Printing it again
         ansible.builtin.debug:
-        msg: "Successfully started and enabled the nginx service"
+          msg: "Successfully started and enabled the nginx service"
