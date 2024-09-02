@@ -3,4 +3,4 @@
   tasks:
   - name: info from args at run time
     ansible.builtin.debug:
-      msg: "Here we are checking the {{TYPE}} by providing {{WHAT}}"
+      msg: "Here we are checking the {{STATE}} by providing {{NAME}}"
