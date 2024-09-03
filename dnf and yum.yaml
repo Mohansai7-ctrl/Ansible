@@ -7,10 +7,11 @@
       - nodejs
       - httpd
       state: installed
+      state: started
 
-  - name: Installing nginx
-    yum:
-      name:
-      - nginx, #To install multiple apps or packages we can use comma or -
-        mysql
-      state: installed
+  # - name: Installing nginx
+  #   yum:
+  #     name:
+  #     - nginx, #To install multiple apps or packages we can use comma or -
+  #       mysql
+  #     state: installed
