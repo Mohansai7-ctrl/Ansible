@@ -3,6 +3,6 @@
   tasks:
   - name: printing the names by loop
     ansible.builtin.debug:
-      msg: "Printing {{ iten }}"
+      msg: "Printing {{ item }}"
     loop:
     - [1:10]
