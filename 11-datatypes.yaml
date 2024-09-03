@@ -7,6 +7,7 @@
   - name: Learning datatypes #string
     course: DevOps with AWS
     duration: 120 #number
+    live: true #boolean
     topics:
     - Linux    #This is the list as denoted by -
     - Shell
@@ -32,6 +33,7 @@
 - name: Learning the datatypes
   hosts: servers
   connection: local
+  live: false #boolean
   vars:
   - name: Printing datatypes info
     course: DevOps with azure
