@@ -2,6 +2,7 @@
 
 - name: Checking whether user is created or not
   hosts: web
+  become: yes
   tasks:
   - name: checking expense user created or not
     ansible.builtin.command: id expense #as ansible dont guarantee for all default commands/modules, we can still use command like this
