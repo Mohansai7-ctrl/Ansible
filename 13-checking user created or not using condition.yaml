@@ -14,6 +14,5 @@
 
   - name: creating the user
     ansible.builtin.command: useradd expense
-      #msg: "Hence user expense is created now successfully"
     when: USER.rc != 0
      
