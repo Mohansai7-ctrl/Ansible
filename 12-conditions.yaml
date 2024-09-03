@@ -1,0 +1,38 @@
+#Small yaml script to check provided number is lesser or greater than 10
+
+#Giving var in play level itself:
+- name: Yaml script to check provided number is lesser or greater than 10
+  hosts: web
+  vars:
+  - number: 10
+  tasks:
+  - name: checking if number is less than 10
+    ansible.builtin.debug:
+      msg: "Given number is {{number}} is less than 10"
+    when: number < 10
+
+  - name: checking if number is greater than or equal to 10
+    ansible.builtin.debug:
+      msg: "Given number is {{number}} which is greater than or equal to 10"
+    when: number >= 10
+
+
+#Giving var as prompt:
+
+- name: Yaml script 2nd play to check provided number is lesser or greater than 10
+  hosts: web
+  vars_prompt:
+  - name: number
+    prompt: Please enter the number to check
+    private: false
+  tasks:
+  - name: Chcecking if number is less than 10 by taking the value from var prompt
+    ansible.builtin.debug:
+      msg: "Given number is {{number}} is less than 10"
+    when: number | int < 10 #Here number taken from var prompt then it is string, as when condition can check and execute if both comparables are same ie both should be string or both should be int
+                            # | acts as filter
+  - name: Chekcing if number is greater than or equal to 10 by taking the value from var prompt
+    ansible.builtin.debug:
+      msg: "Given number is {{number}} which is greater than or equal to 10"
+    when: number | int >= 10
+

@@ -1,5 +1,4 @@
-#Students:
-
+#First Play:
 - name: learning the ansible datatypes
   hosts: localhost
   connection: local
@@ -29,7 +28,7 @@
     ansible.builtin.debug:
       msg: "Learning {{course}} which is of duration {{duration}} contains the topics are {{topics}} by using the tools: {{tools}}"  
 
-
+#2nd Play:
 - name: Learning the datatypes
   hosts: servers
   connection: local
