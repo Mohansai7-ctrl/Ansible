@@ -7,7 +7,7 @@
       - nodejs
       - httpd
       state: installed
-      state: started
+      
       
 
   # - name: Installing nginx
