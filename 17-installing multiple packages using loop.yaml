@@ -1,5 +1,6 @@
 - name: Installing multiple apps and packages
   hosts: web
+  become: yes
   tasks:
   - name: Installing multiple packages
     ansible.builtin.package:
