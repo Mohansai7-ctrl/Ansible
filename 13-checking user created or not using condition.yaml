@@ -1,19 +1,41 @@
 #Small yaml script to check whether user expense created or not, if not by ignoring the errors will create the user.
 
-- name: Checking whether user is created or not
+# - name: Checking whether user is created or not
+#   hosts: web
+#   become: yes
+#   tasks:
+#   - name: checking expense user created or not
+#     ansible.builtin.command: id expense #as ansible dont guarantee for all default commands/modules, we can still use command like this
+#     register: USER #This USER variable will get the output of above command
+#     ignore_errors: true #as we know we are checking user exists or not, if not it should not display any error and to continue, for this we are ignoring the errors
+
+#   - name: Print the USER Info
+#     ansible.builtin.debug:
+#       msg: "user info is: {{USER}}"
+
+#   - name: creating the user
+#     ansible.builtin.command: useradd expense
+#     when: USER.rc != 0
+     
+
+
+
+
+
+- name: Checking user created or not
   hosts: web
   become: yes
   tasks:
-  - name: checking expense user created or not
-    ansible.builtin.command: id expense #as ansible dont guarantee for all default commands/modules, we can still use command like this
-    register: USER #This USER variable will get the output of above command
-    ignore_errors: true #as we know we are checking user exists or not, if not it should not display any error and to continue, for this we are ignoring the errors
+  - name: Checking expense user is existing or not
+    ansible.builtin.command: id expense
+    register: USER
+    ignore_errors: true
 
-  - name: Print the USER Info
+  - NAME: Exit status of user
     ansible.builtin.debug:
-      msg: "user info is: {{USER}}"
+      msg: "status of user {{USER}}"
 
-  - name: creating the user
+  - NAME: Creating the user
     ansible.builtin.command: useradd expense
-    when: USER.rc != 0
-     
+    when: USER.rc !=0
+
