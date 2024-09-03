@@ -25,3 +25,26 @@
   - name: Printing the datatypes info
     ansible.builtin.debug:
       msg: "Learning {{course}} which is of duration {{duration}} contains the topics are {{topics}} by using the tools: {{tools}}"  
+
+
+- name: Learning the datatypes
+  hosts: local
+  connection: local
+  vars
+  - name: Printing datatypes info
+    course: DevOps with azure
+    duration: 140
+    tools:
+      ci: jenkins
+      cm: ansible, puppet, chef, rundeck etc.,.
+      cloud: aws, azure, gcp
+      aws:
+      - IAM
+      - Route53
+    topics:
+    - Linux
+    - Shell
+    - Terraform
+  tasks:
+  - name: printing datatypes info
+    ansible.builtin.ping:
