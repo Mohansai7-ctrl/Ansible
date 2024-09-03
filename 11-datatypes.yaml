@@ -33,7 +33,7 @@
 - name: Learning the datatypes
   hosts: servers
   connection: local
-    vars:
+  vars:
   - name: Printing datatypes info
     course: DevOps with azure
     live: false #boolean
