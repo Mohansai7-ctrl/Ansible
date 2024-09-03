@@ -1,4 +1,4 @@
-Students:
+#Students:
 
 - name: learning the ansible datatypes
   hosts: localhost
@@ -32,7 +32,7 @@ Students:
 - name: Learning the datatypes
   hosts: local
   connection: local
-  vars
+  vars:
   - name: Printing datatypes info
     course: DevOps with azure
     duration: 140
