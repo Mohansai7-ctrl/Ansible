@@ -30,7 +30,7 @@
 
 
 - name: Learning the datatypes
-  hosts: local
+  hosts: servers
   connection: local
   vars:
   - name: Printing datatypes info
