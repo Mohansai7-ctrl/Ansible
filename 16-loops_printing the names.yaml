@@ -3,5 +3,5 @@
   tasks:
   - name: printing the names by loop
     ansible.builtin.debug:
-      msg: "Printing {{ item }}"
+      msg: "{{ item }}"
     loop: "{{ range(1,10) }}"
