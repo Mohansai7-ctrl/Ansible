@@ -33,10 +33,10 @@
 - name: Learning the datatypes
   hosts: servers
   connection: local
-  live: false #boolean
-  vars:
+    vars:
   - name: Printing datatypes info
     course: DevOps with azure
+    live: false #boolean
     duration: 140
     tools:
       ci: jenkins
