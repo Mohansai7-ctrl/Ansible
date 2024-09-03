@@ -4,5 +4,4 @@
   - name: printing the names by loop
     ansible.builtin.debug:
       msg: "Printing {{ item }}"
-    loop:
-    - [1:10]
+    loop: "{{ range(1,10) }}"
