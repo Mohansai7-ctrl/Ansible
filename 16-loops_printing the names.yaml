@@ -1,0 +1,8 @@
+- name: Using loops to print names
+  hosts: web
+  tasks:
+  - name: printing the names by loop
+    ansible.builtin.debug:
+      msg: "Printing {{ iten }}"
+    loop:
+    - [1:10]
