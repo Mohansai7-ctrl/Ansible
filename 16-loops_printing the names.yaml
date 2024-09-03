@@ -5,3 +5,16 @@
     ansible.builtin.debug:
       msg: "{{ item }}"
     loop: "{{ range(1,10) }}"
+
+
+
+- name: Printing names
+  hosts: web
+  tasks:
+  - name: printing the names using loop
+    ansible.builtin.debug:
+      msg: "{{ item }}"
+    loop:
+    - Ramesh
+    - Suresh
+    - Hari
