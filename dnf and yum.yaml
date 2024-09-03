@@ -6,7 +6,8 @@
       name: 
       - nodejs
       - httpd
-      state: installed, started
+      state: installed
+      state: started
       
 
   # - name: Installing nginx
