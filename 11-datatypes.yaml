@@ -1,0 +1,27 @@
+- name: learning the ansible datatypes
+  hosts: localhost
+  connection: local
+  vars:
+  - name: Learning datatypes #string
+    course: DevOps with AWS
+    duration: 120 #number
+    topics:
+    - Linux    #This is the list as denoted by -
+    - Shell
+    - Ansible
+    - Terraform
+    - Kubernetes
+    - Prometheus
+    tools:
+      ci: jenkins #This is the map as denoted by giving a tab space
+      cm: ansible and puppet etc
+      cloud: aws, azure , gcp etc
+      aws:
+      - EC2
+      - IAM
+      - Route53
+      - RDS
+  tasks:
+    name: Printing the datatypes info
+    ansible.builtin.debug:
+      msg: "Learning {{course}} which is of duration {{duration}} contains the topics are {{topics}} by using the tools: {{tools}}"  
