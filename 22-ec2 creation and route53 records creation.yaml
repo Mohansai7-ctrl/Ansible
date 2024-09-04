@@ -9,7 +9,7 @@
     zone: "mohansai.online"
   tasks:
   - name: creating ec2_instances
-    amazon.aws.ec2_instances:
+    amazon.aws.ec2_instance:
       name: "{{ item }}"
       instance_type: "t3.micro"
       vpc_subnet_id: "{{ subnet_id }}"
@@ -30,16 +30,16 @@
 
 
   - name: creating private ip address records
-      amazon.aws.route53:
-        state: present
-        zone: "{{ zone }}"
-        record: "{{ item.item }}.{{ zone }}"
-        value: "{{ item.instances[0].private_ip_address }}"
-        type: A
-        ttl: 1
-        wait: true
-        overwrite: true
-      loop: "{{ ec2_instances.results }}"
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      value: "{{ item.instances[0].private_ip_address }}"
+      type: A
+      ttl: 1
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_instances.results }}"
 
 
   - name: generating the public ip of frontend server/node
