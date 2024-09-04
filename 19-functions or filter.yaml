@@ -62,6 +62,8 @@
   - name: checking ip
     ansible.builtin.debug:
       msg: "{{ myip | ansible.utils.ipv4 }}"
+
+
 - name: checking again the ip
   vars:
     checkup: "10.155.3.45"
@@ -69,7 +71,7 @@
   tasks:
   - name: checking the ip agin
     #vars:
-      #ip: "10.155.3.45" #here, msg output will be true as limit values are within max or below 255
+      #ip: "256.155.3.45" #here, msg output will be true as limit values are within max or below 255
     ansible.builtin.debug:
       msg: "{{ checkup | ansible.utils.ipv4 }}"
     
