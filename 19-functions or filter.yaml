@@ -32,4 +32,13 @@
     #   msg: "{{ numbers | duplicate }}"
 
 
+  - name: converting dictionary or list or map to item
+    vars:
+      man:
+        name: "sai"
+        trainer: "siva"
+    ansible.builtin.debug:
+      msg: "{{ man | dict2items}}"
+
+
       
