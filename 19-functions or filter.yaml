@@ -7,53 +7,53 @@
       msg: "{{ time | default ('mama') }}"
 
 
-- name: Printing given data to upper case
-  hosts: web
-  vars:
-  - course: "Hello Ramesh"
-  tasks:
-  - name: printing to upper
-    ansible.builtin.debug:
-      msg: "{{ course | upper }}"
+# - name: Printing given data to upper case
+#   hosts: web
+#   vars:
+#   - course: "Hello Ramesh"
+#   tasks:
+#   - name: printing to upper
+#     ansible.builtin.debug:
+#       msg: "{{ course | upper }}"
 
-  - name: Printing by converting to lower case
-    vars:
-    - DATA: "HELLO RAMESH"
-    ansible.builtin.debug:
-      msg: "{{ DATA | lower }}"
-
-
-  - name: printing unique from provided data or list
-    vars:
-    - numbers: [1,2,3,4,5,6,6,10,10,2,3,15]
-    ansible.builtin.debug:
-      msg: "{{ numbers | unique }}"
-    # ansible.builtin.debug:
-    #   msg: "{{ numbers | duplicate }}"
+#   - name: Printing by converting to lower case
+#     vars:
+#     - DATA: "HELLO RAMESH"
+#     ansible.builtin.debug:
+#       msg: "{{ DATA | lower }}"
 
 
-  - name: converting dictionary or list or map to item
-    vars:
-      man:
-        name: "sai"
-        trainer: "siva"
-    ansible.builtin.debug:
-      msg: "{{ man | dict2items}}"
+#   - name: printing unique from provided data or list
+#     vars:
+#     - numbers: [1,2,3,4,5,6,6,10,10,2,3,15]
+#     ansible.builtin.debug:
+#       msg: "{{ numbers | unique }}"
+#     # ansible.builtin.debug:
+#     #   msg: "{{ numbers | duplicate }}"
 
 
-  - name: items to dictionary
-    vars:
-      man:
-      - {"key": "sai", "value": "siva"}
-      - {"key": "httpd", "value": "present"}
-    ansible.builtin.debug:
-      msg: "{{ man | items2dict }}"
+#   - name: converting dictionary or list or map to item
+#     vars:
+#       man:
+#         name: "sai"
+#         trainer: "siva"
+#     ansible.builtin.debug:
+#       msg: "{{ man | dict2items}}"
+
+
+#   - name: items to dictionary
+#     vars:
+#       man:
+#       - {"key": "sai", "value": "siva"}
+#       - {"key": "httpd", "value": "present"}
+#     ansible.builtin.debug:
+#       msg: "{{ man | items2dict }}"
 
  
 
   - name: checking ip is ipv4 or not
     vars:
-      ip: 150.250.0.0
+      ip: 150.257.0.0
     ansible.builtin.debug:
       msg: "{{ip | ansible.utils.ipv4}}"
 
