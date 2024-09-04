@@ -5,3 +5,10 @@
   - name: Printing variable to which valud is giving by using pipe and default option
     ansible.builtin.debug:
       msg: "{{ time | default ('mama') }}"
+
+
+  - name: Pringing given data to upper case
+    vars:
+    - course: "Hello Ramesh"
+    ansible.builtin.debug:
+      msg: "{{ course | upper }}"
