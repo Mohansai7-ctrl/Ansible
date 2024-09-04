@@ -15,6 +15,6 @@
 
   - name: as user is not existing, going to create in the local means ansible server
     ansible.builtin.command: useradd ramesh
-      msg: "now user info is {{USER}}"
+      #msg: "now user info is {{USER}}"
     when: USER.rc != 0
       
