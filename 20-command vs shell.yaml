@@ -29,6 +29,7 @@
   tasks:
   - name: checking to append using command
     ansible.builtin.command: ls -ltr > /tmp/output.txt
+    ignore_errors: true
 
 
 #Using shell this can be done:
