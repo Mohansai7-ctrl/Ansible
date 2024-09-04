@@ -6,4 +6,4 @@
   - name: using command module
     ansible.builtin.command: id ramesh
     register: USER
-      msg: "USER.rc !=0 then ramesh user is not created"
+      msg: "{USER.rc !=0} then ramesh user is not created"
