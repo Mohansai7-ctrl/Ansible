@@ -66,12 +66,10 @@
 
 - name: checking again the ip
   vars:
-    checkup: "10.155.3.45"
+    checkup: "256.155.3.45" #here, msg output will show the ip itself as limit values are within max or below 255
   hosts: web
   tasks:
   - name: checking the ip agin
-    #vars:
-      #ip: "256.155.3.45" #here, msg output will show the ip itself as limit values are within max or below 255
     ansible.builtin.debug:
       msg: "{{ checkup | ansible.utils.ipv4 }}"
     
