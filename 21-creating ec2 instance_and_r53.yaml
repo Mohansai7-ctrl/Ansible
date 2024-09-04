@@ -5,7 +5,7 @@
     sg_id: "sg-0d91387712ba38962"
     subnet_id: "subnet-021ec0b6274b5e769"
     ami_id: "ami-09c813fb71547fc4f"
-    zone: "mohansai.online"
+    zone: mohansai.online
     instances:
     - mysql
     - backend
