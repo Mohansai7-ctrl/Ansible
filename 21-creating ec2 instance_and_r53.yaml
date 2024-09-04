@@ -20,3 +20,22 @@
       image_id: "{{ ami_id }}"
     loop: "{{ instances }}"
     register: ec2_instances #after creating provided instances items, their result will get into this ec2_instances
+
+  - name: getting the result of above ec2_instance creation
+    ansible.builtin.debug:
+      msg: "{{ ec2_instances }}"
+
+
+#now getting r53 private ip addresses for above 3 servers using ec2_instances result
+  
+  # - name: creating or getting the private ips as route53
+  #   amazon.aws.route53:
+  #     state: present
+  #     record:
+  #     value:
+  #     type: A
+  #     ttl: 1
+  #     wait: true
+  #     overwrite: true
+  #   loop:
+
