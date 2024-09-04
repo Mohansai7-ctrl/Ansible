@@ -5,7 +5,7 @@
     sg_id: "sg-0d91387712ba38962"
     subnet_id: "subnet-021ec0b6274b5e769"
     ami_id: "ami-09c813fb71547fc4f"
-    zone: "mohan.online"
+    zone: "mohansai.online"
     instances:
     - mysql
     - backend
@@ -31,7 +31,7 @@
   - name: creating or getting the private ips as route53
     amazon.aws.route53:
       state: present
-      record: "{{ item.item }}.{{ zone }}" #item.item=mysql/backend/frontend. zone=mohan.online
+      record: "{{ item.item }}.{{ zone }}" #item.item=mysql/backend/frontend. zone=mohansai.online
       value: "{{ item.instances[0].private_ip_address }}"
       type: A
       ttl: 1
