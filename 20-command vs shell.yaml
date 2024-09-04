@@ -6,5 +6,5 @@
   - name: using command module
     ansible.builtin.command: id ramesh
     register: USER
-      msg: "User ramesh is not existing, kindly create the user to proceed further"
+      #msg: "User ramesh is not existing, kindly create the user to proceed further"
     when: USER.rc != 0
