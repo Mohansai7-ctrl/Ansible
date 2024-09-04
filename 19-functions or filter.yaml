@@ -53,7 +53,7 @@
 
   - name: checking ip is ipv4 or not
     vars:
-      my_ip: 150.257.0.0
+      my_ip: "150.257.0.0"
     ansible.builtin.debug:
       msg: "{{my_ip | ansible.utils.ipv4}}"
 
