@@ -1,0 +1,22 @@
+- name: In this yaml script, we are going to create ec2-instances and then setting r53 records
+  hosts: local
+  connection: local
+  vars:
+    sg_id: "sg-0d91387712ba38962"
+    subnet_id: "subnet-021ec0b6274b5e769"
+    ami_id: "ami-09c813fb71547fc4f"
+    zone: "mohan.online"
+    instances:
+    - mysql
+    - backend
+    - frontend
+  tasks:
+  - name: creating ec2-instances
+    amazon.aws.ec2-instance:
+      name: "{{ item }}"
+      instance_type: "t3.micro"
+      security_group: "{{ sg_id }}"
+      vpc_subnet_id: "{{ subnet_id }}"
+      image_id: "{{ ami_id }}"
+    loop: "{{ instances }}"
+    register: ec2-instances #after creating provided instances items, their result will get into this ec2-instances
