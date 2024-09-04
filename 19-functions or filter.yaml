@@ -24,11 +24,11 @@
 
   - name: printing unique from provided data or list
     vars:
-    - data: "[ 1,2,3,3,4,4,10,100,1 ]"
+    - numbers: [1,2,3,4,5,6,6,10,10,2,3,15]
     ansible.builtin.debug:
-      msg: "{{ data | unique }}"
+      msg: "{{ numbers | unique }}"
     ansible.builtin.debug:
-      msg: "{{ data | duplicate }}"
+      msg: "{{ numbers | duplicate }}"
 
 
       
