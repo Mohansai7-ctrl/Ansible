@@ -29,3 +29,13 @@
   tasks:
   - name: checking to append using command
     ansible.builtin.command: ps -ef > /tmp/output.txt
+
+
+#Using shell this can be done:
+- name: checking by command
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: checking to append using command
+    ansible.builtin.shell: ps -ef > /tmp/output.txt
