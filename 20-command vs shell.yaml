@@ -7,4 +7,8 @@
     ansible.builtin.command: id ramesh
     register: USER
       #msg: "User ramesh is not existing, kindly create the user to proceed further"
-    when: USER.rc != 0
+    #when: USER.rc != 0
+
+  - name: printing the user info
+    ansible.builtin.debug:
+      msg: "user info is {{ USER }}"
