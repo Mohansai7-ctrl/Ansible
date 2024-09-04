@@ -42,6 +42,11 @@
     ansible.builtin.shell: ls -ltr > /tmp/output.txt
   - name: similarly checkins ssh p.id from ps -ef
     ansible.builtin.shell: ps -ef | grep ssh
-    
+    register: ps
+
+  - name: reading the output
+    ansible.builtin.debug:
+      msg: "pid of ssh is {{ ps }}"
+
 
 
