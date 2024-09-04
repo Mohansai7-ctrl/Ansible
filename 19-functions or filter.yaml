@@ -63,7 +63,7 @@
       msg: "{{ myip | ansible.utils.ipv4 }}"
   - name: checking again the ip
     vars:
-      ip: "10.155.3.45"
+      ip: "10.155.3.45" #here, msg output will be true as limit values are within max or below 255
     ansible.builtin.debug:
-      msg: "given ip is {{ ip | ansible.utils.ipv4 }}"
+      msg: "{{ ip | ansible.utils.ipv4 }}"
       
