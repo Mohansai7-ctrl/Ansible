@@ -19,3 +19,13 @@
       #msg: "now user info is {{USER}}"
     when: USER.rc != 0
       
+
+
+#example where command fails in yaml
+- name: checking by command
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: checking to append using command
+    ansible.builtin.command: ps -ef > /tmp/output.txt
