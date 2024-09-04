@@ -20,4 +20,4 @@
       vpc_subnet_id: "{{ subnet_id }}"
       image_id: "{{ ami_id }}"
     loop: "{{ instances }}"
-    register: ec2-instances #after creating provided instances items, their result will get into this ec2-instances
+    register: ec2_instances #after creating provided instances items, their result will get into this ec2_instances
