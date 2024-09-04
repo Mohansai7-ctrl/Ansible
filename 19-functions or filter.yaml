@@ -7,7 +7,7 @@
       msg: "{{ time | default ('mama') }}"
 
 
-  - name: Pringing given data to upper case
+  - name: Printing given data to upper case
     vars:
     - course: "Hello Ramesh"
     tasks:
