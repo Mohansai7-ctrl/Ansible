@@ -8,7 +8,8 @@
     zone: "mohansai.online"
     instances:
     - mysql
-    - backend
+    - backend 1
+    - backend 2
     - frontend
   tasks:
   - name: creating ec2-instances
