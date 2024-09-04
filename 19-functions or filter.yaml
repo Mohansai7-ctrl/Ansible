@@ -12,3 +12,26 @@
     - course: "Hello Ramesh"
     ansible.builtin.debug:
       msg: "{{ course | upper }}"
+
+  - name: Printing by converting to lower case
+    vars:
+    - DATA: "HELLO RAMESH"
+    tasks:
+    - name: converting to lower
+      ansible.builtin.debug:
+        msg: "{{ DATA | lower }}"
+
+
+  - name: printing unique from provided data or list
+    vars:
+    - data: "[ 1,2,3,3,4,4,10,100,1 ]"
+    tasks:
+    - name: unique are
+      ansible.builtin.debug:
+        msg: "{{ data | unique }}"
+    - name: duplicates are
+      ansible.builtin.debug:
+        msg: "{{ data | duplicate }}"
+
+
+      
