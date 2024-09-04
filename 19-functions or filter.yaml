@@ -49,13 +49,13 @@
     ansible.builtin.debug:
       msg: "{{ man | items2dict }}"
 
-  - name: items to dictionary
+ 
+
+  - name: checking ip is ipv4 or not
     vars:
-      man:
-      - {key: 'postfix', value: 'absent'}
-      - {key: 'postgresql', value: 'present'}
+      ip: 150.250.0.0
     ansible.builtin.debug:
-      msg: "{{ man | items2dict }}"
+      msg: "{{ip | ansible.utils.ipv4}}"
 
 
 
