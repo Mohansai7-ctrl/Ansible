@@ -51,12 +51,16 @@
 
  
 
-  - name: checking ip is ipv4 or not
+  # - name: checking ip is ipv4 or not
+  #   vars:
+  #     my_ip: "150.257.0.0"
+  #   ansible.builtin.debug:
+  #     msg: "{{ my_ip | ansible.utils.ipv4 }}"
+
+
+ - name: check ip address
     vars:
-      my_ip: "150.257.0.0"
+      myip: "356.168.1.1"
     ansible.builtin.debug:
-      msg: "{{ my_ip | ansible.utils.ipv4 }}"
-
-
-
+      msg: "{{ myip | ansible.utils.ipv4 }}"
       
