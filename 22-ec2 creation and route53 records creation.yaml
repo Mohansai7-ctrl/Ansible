@@ -7,6 +7,12 @@
     subnet_id: "subnet-021ec0b6274b5e769"
     ami_id: "ami-09c813fb71547fc4f"
     zone: "mohansai.online"
+    instances:
+      - mysql
+      - frontend
+      - backend 1
+      - backend 2
+
   tasks:
   - name: creating ec2_instances
     amazon.aws.ec2_instance:
@@ -15,11 +21,6 @@
       vpc_subnet_id: "{{ subnet_id }}"
       image_id: "{{ ami_id }}"
       security_group: "{{ sg_id }}"
-      instances:
-      - mysql
-      - frontenc
-      - backend 1
-      - backend 2
     loop: "{{ instances }}"
     register: ec2_instances
 
