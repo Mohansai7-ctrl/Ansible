@@ -1,0 +1,7 @@
+- name: checking the functions also known as filters
+  hosts: web
+  become: yes
+  tasks:
+  - name: Printing variable to which valud is giving by using pipe and default option
+    ansible.builtin.debug:
+      msg: "{{ time | default ('mama') }}"
