@@ -28,7 +28,7 @@
   become: yes
   tasks:
   - name: checking to append using command
-    ansible.builtin.command: ps -ef > /tmp/output.txt
+    ansible.builtin.command: ls -ltr > /tmp/output.txt
 
 
 #Using shell this can be done:
@@ -38,4 +38,4 @@
   become: yes
   tasks:
   - name: checking to append using command
-    ansible.builtin.shell: ps -ef > /tmp/output.txt
+    ansible.builtin.shell: ls -ltr > /tmp/output.txt
