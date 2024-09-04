@@ -57,19 +57,19 @@
   become: yes
   vars:
     myip: "356.168.1.1" #as the max value of each octagane is 255. here it is exceede , hence in output msg will come as false
-    test_ip: "10.155.3.45"
+    #test_ip: "10.155.3.45"
   tasks:
   - name: checking ip
     ansible.builtin.debug:
       msg: "{{ myip | ansible.utils.ipv4 }}"
 - name: checking again the ip
   vars:
-    test_ip: "10.155.3.45"
+    checkup: "10.155.3.45"
   hosts: web
   tasks:
   - name: checking the ip agin
     #vars:
       #ip: "10.155.3.45" #here, msg output will be true as limit values are within max or below 255
     ansible.builtin.debug:
-      msg: "{{ test_ip | ansible.utils.ipv4 }}"
+      msg: "{{ checkup | ansible.utils.ipv4 }}"
     
