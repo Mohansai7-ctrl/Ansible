@@ -1,0 +1,9 @@
+- name: Command vs shell in ansible
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: using command module
+    ansible.builtin.command: id ramesh
+    register: USER
+      msg: "USER.rc !=0 then ramesh user is not created"
