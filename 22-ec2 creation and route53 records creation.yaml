@@ -1,6 +1,5 @@
 - name: creating ec2_instances and its records via route53
   hosts: local
-  connection: local
   become: yes
   vars:
     sg_id: "sg-0d91387712ba38962"
