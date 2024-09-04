@@ -10,8 +10,10 @@
   - name: Pringing given data to upper case
     vars:
     - course: "Hello Ramesh"
-    ansible.builtin.debug:
-      msg: "{{ course | upper }}"
+    tasks:
+    - name: printing to upper
+      ansible.builtin.debug:
+        msg: "{{ course | upper }}"
 
   - name: Printing by converting to lower case
     vars:
