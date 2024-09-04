@@ -8,6 +8,7 @@
 
 
 - name: Printing given data to upper case
+  hosts: web
   vars:
   - course: "Hello Ramesh"
   tasks:
