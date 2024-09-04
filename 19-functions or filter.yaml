@@ -49,6 +49,14 @@
     ansible.builtin.debug:
       msg: "{{ man | items2dict }}"
 
+  - name: items to dictionary
+    vars:
+      man:
+      - {key: 'sai', value: 'siva'}
+      - {key: 'httpd', value: 'present'}
+    ansible.builtin.debug:
+      msg: "{{ man | items2dict }}"
+
 
 
       
