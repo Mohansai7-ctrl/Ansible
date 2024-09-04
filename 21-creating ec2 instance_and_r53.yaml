@@ -1,7 +1,6 @@
 - name: In this yaml script, we are going to create ec2-instances and then setting r53 records
   hosts: local
   connection: local
-  become: yes
   vars:
     sg_id: "sg-0d91387712ba38962"
     subnet_id: "subnet-021ec0b6274b5e769"
