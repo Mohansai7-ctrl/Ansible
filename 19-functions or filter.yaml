@@ -44,8 +44,8 @@
   - name: items to dictionary
     vars:
       man:
-      - {"key": "sai", "name": "siva"}
-      - {"key": "httpd", "name": "present"}
+      - {"key": "sai", "value": "siva"}
+      - {"key": "httpd", "value": "present"}
     ansible.builtin.debug:
       msg: "{{ man | items2dict }}"
 
