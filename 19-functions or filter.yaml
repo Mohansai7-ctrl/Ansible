@@ -41,4 +41,14 @@
       msg: "{{ man | dict2items}}"
 
 
+  - name: items to dictionary
+    vars:
+      man:
+      - {"key": "sai", "name": "siva"}
+      - {"key": "httpd", "name": "present"}
+    ansible.builtin.debug:
+      msg: "{{ man | items2dict }}"
+
+
+
       
