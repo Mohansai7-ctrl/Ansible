@@ -5,6 +5,6 @@
     STUDENT: "MOHANSAI"
     BATCH: "81S"
   tasks:
-  - name: Introduction about me right now
-    ansible.builtin.debug:
-      msg: "Hi I'm {{STUDENT}} , right now learning {{COURSE}} in batch {{BATCH}}"
+    - name: Introduction about me right now
+      ansible.builtin.debug:
+        msg: "Hi I'm {{STUDENT}} , right now learning {{COURSE}} in batch {{BATCH}}"

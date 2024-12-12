@@ -2,6 +2,6 @@
   hosts: web
   become: yes
   tasks:
-  - name: checking the ansible facts
-    ansible.builtin.debug:
-      msg: "The ansible facts are {{ansible_facts}}"
+    - name: checking the ansible facts
+      ansible.builtin.debug:
+        msg: "The ansible facts are {{ansible_facts}}"

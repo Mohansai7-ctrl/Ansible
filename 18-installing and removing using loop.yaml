@@ -2,12 +2,17 @@
   hosts: web
   become: yes
   tasks:
-  - name: installing and removing
-    ansible.builtin.package:
-      name: "{{ item.name }}"
-      state: "{{ item.state }}"
-    loop:
-    - { name: 'nginx', state: 'present' }
-    - { name: 'httpd', state: 'removed' }
-    - { name: 'postfix', state: 'absent' }
-    - { name: 'postgresql', state: 'installed' }
+    - name: installing and removing
+      ansible.builtin.package:
+        name: "{{ item.name }}"
+        state: "{{ item.state }}"
+      loop:
+        - { name: 'nginx', state: 'present' }
+        - { name: 'httpd', state: 'removed' }
+        - { name: 'postfix', state: 'absent' }
+        - { name: 'postgresql', state: 'installed' }
+
+
+
+
+

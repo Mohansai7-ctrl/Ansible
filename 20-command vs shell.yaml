@@ -3,21 +3,21 @@
   connection: local
   become: yes
   tasks:
-  - name: using command module
-    ansible.builtin.command: id ramesh
-    register: USER
-      #msg: "User ramesh is not existing, kindly create the user to proceed further"
-    #when: USER.rc != 0
-    ignore_errors: true
+    - name: using command module
+      ansible.builtin.command: id ramesh
+      register: USER
+        #msg: "User ramesh is not existing, kindly create the user to proceed further"
+      #when: USER.rc != 0
+      ignore_errors: true
 
-  - name: printing the user info
-    ansible.builtin.debug:
-      msg: "user info is {{ USER }}"
+    - name: printing the user info
+      ansible.builtin.debug:
+        msg: "user info is {{ USER }}"
 
-  - name: as user is not existing, going to create in the local means ansible server
-    ansible.builtin.command: useradd ramesh
-      #msg: "now user info is {{USER}}"
-    when: USER.rc != 0
+    - name: as user is not existing, going to create in the local means ansible server
+      ansible.builtin.command: useradd ramesh
+        #msg: "now user info is {{USER}}"
+      when: USER.rc != 0
       
 
 
@@ -27,9 +27,9 @@
   connection: local
   become: yes
   tasks:
-  - name: checking to append using command
-    ansible.builtin.command: ls -ltr > /tmp/output.txt
-    ignore_errors: true
+    - name: checking to append using command
+      ansible.builtin.command: ls -ltr > /tmp/output.txt
+      ignore_errors: true
 
 
 #Using shell this can be done:
@@ -38,15 +38,15 @@
   connection: local
   become: yes
   tasks:
-  - name: checking to append using command
-    ansible.builtin.shell: ls -ltr > /tmp/output.txt
-  - name: similarly checkins ssh p.id from ps -ef
-    ansible.builtin.shell: ps -ef | grep ssh
-    register: ps
+    - name: checking to append using command
+      ansible.builtin.shell: ls -ltr > /tmp/output.txt
+    - name: similarly checkins ssh p.id from ps -ef
+      ansible.builtin.shell: ps -ef | grep ssh
+      register: ps
 
-  - name: reading the output
-    ansible.builtin.debug:
-      msg: "pid of ssh is {{ ps }}"
+    - name: reading the output
+      ansible.builtin.debug:
+        msg: "pid of ssh is {{ ps }}"
 
 
 

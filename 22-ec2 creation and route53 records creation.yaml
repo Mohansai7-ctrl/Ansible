@@ -13,47 +13,47 @@
       - backend 2
 
   tasks:
-  - name: creating ec2_instances
-    amazon.aws.ec2_instance:
-      name: "{{ item }}"
-      instance_type: "t3.micro"
-      vpc_subnet_id: "{{ subnet_id }}"
-      image_id: "{{ ami_id }}"
-      security_group: "{{ sg_id }}"
-    loop: "{{ instances }}"
-    register: ec2_instances
+    - name: creating ec2_instances
+      amazon.aws.ec2_instance:
+        name: "{{ item }}"
+        instance_type: "t3.micro"
+        vpc_subnet_id: "{{ subnet_id }}"
+        image_id: "{{ ami_id }}"
+        security_group: "{{ sg_id }}"
+      loop: "{{ instances }}"
+      register: ec2_instances
 
 
-  - name: Putting the ec2_instance creation result into ec2_instances and printing its info
-    ansible.builtin.debug:
-      msg: "{{ ec2_instances }}"
+    - name: Putting the ec2_instance creation result into ec2_instances and printing its info
+      ansible.builtin.debug:
+        msg: "{{ ec2_instances }}"
 
 
-  - name: creating private ip address records
-    amazon.aws.route53:
-      state: present
-      zone: "{{ zone }}"
-      record: "{{ item.item }}.{{ zone }}"
-      value: "{{ item.instances[0].private_ip_address }}"
-      type: A
-      ttl: 1
-      wait: true
-      overwrite: true
-    loop: "{{ ec2_instances.results }}"
+    - name: creating private ip address records
+      amazon.aws.route53:
+        state: present
+        zone: "{{ zone }}"
+        record: "{{ item.item }}.{{ zone }}"
+        value: "{{ item.instances[0].private_ip_address }}"
+        type: A
+        ttl: 1
+        wait: true
+        overwrite: true
+      loop: "{{ ec2_instances.results }}"
 
 
-  - name: generating the public ip of frontend server/node
-    amazon.aws.route53:
-      state: present
-      zone: "{{ zone }}"
-      record: "{{ zone }}"
-      type: A
-      ttl: 1
-      wait: true
-      overwrite: true
-      value: "{{ item.instances[0].public_ip_address }}"
-    loop: "{{ ec2_instances.results }}"
-    when: item.item == frontend
+    - name: generating the public ip of frontend server/node
+      amazon.aws.route53:
+        state: present
+        zone: "{{ zone }}"
+        record: "{{ zone }}"
+        type: A
+        ttl: 1
+        wait: true
+        overwrite: true
+        value: "{{ item.instances[0].public_ip_address }}"
+      loop: "{{ ec2_instances.results }}"
+      when: item.item == frontend
 
 
   

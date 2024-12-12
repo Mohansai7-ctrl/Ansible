@@ -10,44 +10,44 @@
 - name: Printing given data to upper case
   hosts: web
   vars:
-  - course: "Hello Ramesh"
+    course: "Hello Ramesh"
   tasks:
-  - name: printing to upper
-    ansible.builtin.debug:
-      msg: "{{ course | upper }}"
+    - name: printing to upper
+      ansible.builtin.debug:
+        msg: "{{ course | upper }}"
 
-  - name: Printing by converting to lower case
-    vars:
-    - DATA: "HELLO RAMESH"
-    ansible.builtin.debug:
-      msg: "{{ DATA | lower }}"
-
-
-  - name: printing unique from provided data or list
-    vars:
-    - numbers: [1,2,3,4,5,6,6,10,10,2,3,15]
-    ansible.builtin.debug:
-      msg: "{{ numbers | unique }}"
-    # ansible.builtin.debug:
-    #   msg: "{{ numbers | duplicate }}"
+    - name: Printing by converting to lower case
+      vars:
+      - DATA: "HELLO RAMESH"
+      ansible.builtin.debug:
+        msg: "{{ DATA | lower }}"
 
 
-  - name: converting dictionary or list or map to item
-    vars:
-      man:
-        name: "sai"
-        trainer: "siva"
-    ansible.builtin.debug:
-      msg: "{{ man | dict2items}}"
+    - name: printing unique from provided data or list
+      vars:
+      - numbers: [1,2,3,4,5,6,6,10,10,2,3,15]
+      ansible.builtin.debug:
+        msg: "{{ numbers | unique }}"
+      # ansible.builtin.debug:
+      #   msg: "{{ numbers | duplicate }}"
 
 
-  - name: items to dictionary
-    vars:
-      man:
-      - {"key": "sai", "value": "siva"}
-      - {"key": "httpd", "value": "present"}
-    ansible.builtin.debug:
-      msg: "{{ man | items2dict }}"
+    - name: converting dictionary or list or map to item
+      vars:
+        man:
+          name: "sai"
+          trainer: "siva"
+      ansible.builtin.debug:
+        msg: "{{ man | dict2items}}"
+
+
+    - name: items to dictionary
+      vars:
+        man:
+        - {"key": "sai", "value": "siva"}
+        - {"key": "httpd", "value": "present"}
+      ansible.builtin.debug:
+        msg: "{{ man | items2dict }}"
 
  
 
@@ -59,9 +59,9 @@
     myip: "356.168.1.1" #as the max value of each octagane is 255. here it is exceede , hence in output msg will come as false
     #test_ip: "10.155.3.45"
   tasks:
-  - name: checking ip
-    ansible.builtin.debug:
-      msg: "{{ myip | ansible.utils.ipv4 }}"
+    - name: checking ip
+      ansible.builtin.debug:
+        msg: "{{ myip | ansible.utils.ipv4 }}"
 
 
 - name: checking again the ip
@@ -69,7 +69,10 @@
     checkup: "256.155.3.45" #here, msg output will show the ip itself as limit values are within max or below 255
   hosts: web
   tasks:
-  - name: checking the ip agin
-    ansible.builtin.debug:
-      msg: "{{ checkup | ansible.utils.ipv4 }}"
+    - name: checking the ip agin
+      ansible.builtin.debug:
+        msg: "{{ checkup | ansible.utils.ipv4 }}"
     
+
+
+
